@@ -4,27 +4,30 @@
   <head>
     <meta charset="UTF-8">
     <style type="text/css">
-      @font-face{
-      font-family: "liparxe";
-      src: url("https://haar-you.github.io/liparxe-font/font/liparxe-round.ttf") format("truetype");
-      }
-      
-      @font-face{
-      font-family: "bhaataan";
-      src: url("https://haar-you.github.io/BhaataanFont/fonts/high-contrast/Transliteration/BhataanTransliteration.woff") format("woff");
-      }
-      
-      :lang(art-lipa){
-      font-family: "liparxe";
-      }
+     @font-face{
+	 font-family: "liparxe";
+	 src:
+	     local("liparxe-round"),
+	     url("https://haar-you.github.io/liparxe-font/font/liparxe-round.ttf") format("truetype");
+     }
+     
+     @font-face{
+	 font-family: "bhaataan";
+	 src:
+	     local("BhaataanTransliteration"),
+	     url("https://haar-you.github.io/BhaataanFont/fonts/high-contrast/Transliteration/BhataanTransliteration.woff") format("woff");
+     }
+     
+     :lang(art-lipa){
+	 font-family: "liparxe";
+     }
 
-      :lang(art-bhat){
-      font-family: "bhaataan";
-      }
+     :lang(art-bhat){
+	 font-family: "bhaataan";
+     }
 
-      
+     
     </style>
-
   </head>
   <body style="font-size: large;">
     <p lang="en">
@@ -34,10 +37,10 @@
       これは日本語。
     </p>
     <p lang="art-lipa">
-      Fqa es lineparine.
+      Fqa es lipalain.
     </p>
     <p lang="art-bhat">
-      ko bhátán zepha hem.
+      ko bhátán hem.
     </p>
 
   </body>

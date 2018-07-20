@@ -29,27 +29,95 @@
      }
      .lipa{
 	 font-family: "liparxe";
+	 font-size: large;
+     }
+     table, table td, table th{
+	 border: solid 1px black;
+	 margin: 0;
+	 padding: 0;
+	 border-spacing: 0;
+	 border-collapse: collapse;
+     }
+     
+     table th{
+	 background-color: #ccc;
+     }
+     table td{
+	 text-align: center;
+     }	
+     table{
+	 margin-left: 40px;
      }
     </style>
+    <script type="text/javascript">
+     var termlist = {
+	 "nominative": ["lsans", "主格"],
+	 "accusative": ["tsans", "対格"],
+	 "genitive": ["diursans", "属格"],
+	 "instrumental": ["leusursans", "具格"],
+	 "zero": ["olorsans", "無格"],
+	 "postpositional": ["emaltlese'd sans", "後置格"],
+
+	 "sg": ["fanklavolo", "単数"],
+	 "pl": ["lolervel", "複数"],
+
+	 "noun": ["ftlexest", "名詞"],
+	 "vowel-stem-noun": ["fende ftlexest", "母音幹名詞"],
+	 "consonant-stem-noun": ["pervo ftlexest", "子音幹名詞"],
+
+	 "personal-pronoun": ["ftusurla", "人称代名詞"],
+	 "number": ["", "数"],
+	 "person": ["ftusurla", "人称"],
+	 "first-person": ["mien ftusurla", "一人称"],
+	 "second-person": ["kna'd ftusurla", "二人称"],
+	 "third-person-feminine": ["cien ftusurla", "三人称女性"],
+	 "third-person-masculine": ["sien ftusurla", "三人称男性"],
+	 "third-person-neuter": ["nien ftusurla", "三人称中性"],
+
+	 "first-person-inclusive": ["", "一人称包括形"],
+	 "first-person-exclusive": ["", "一人称除外形"],
+
+	 "verb": ["ftona", "動詞"],
+
+	 "vowel-stem-verb": ["fende ftona", "母音幹動詞"],
+	 "consonant-stem-verb": ["pervo ftona", "子音幹動詞"],
+	 
+	 "imperative": ["shrlovel", "命令形"],
+	 "infinitive": ["ftlexisa'd ftlexestrisel", "不定詞"],
+	 "realis": ["ftonajt", "終止詞"],
+	 "past-participle": ["1te tiliesterlo", "過去分詞"],
+	 "future-participle": ["2te tiliesterlo", "未来分詞"]
+	 
+     }
+     window.addEventListener("load", function(){
+	 //return;
+	 var elems = document.querySelectorAll("[data-term]");
+
+	 elems.forEach(function(node){
+	     node.innerHTML = termlist[node.getAttribute("data-term")][0]
+
+	 });
+
+     });
+    </script>
   </head>
 
   <body>
     <div>
-      <h3>名詞 <span class="lipa">ftlexest</span></h3>
-      
+      <h3>名詞 <span class="lipa" data-term="noun"></span></h3>
       <table>
-	<caption>母音語幹名詞 <span class="lipa">fende ftlexest</span></caption>
+	<caption>母音語幹名詞 <span class="lipa" data-term="vowel-stem-noun"></span></caption>
 	<tr>
-	  <td></td>
-	  <td>主格<br><span class="lipa">lsans</span></td>
-	  <td>無格<br><span class="lipa">olorsans</span></td>
-	  <td>対格<br><span class="lipa">tsans</span></td>
-	  <td>属格<br><span class="lipa">diursans</span></td>
-	  <td>具格<br><span class="lipa">leusursans</span></td>
-	  <td>後置格<br><span class="lipa">emaltlese'd sans</span></td>
+	  <th></th>
+	  <th>主格<br><span class="lipa" data-term="nominative"></span></th>
+	  <th>無格<br><span class="lipa" data-term="zero"></span></th>
+	  <th>対格<br><span class="lipa" data-term="accusative"></span></th>
+	  <th>属格<br><span class="lipa" data-term="genitive"></span></th>
+	  <th>具格<br><span class="lipa" data-term="instrumental"></span></th>
+	  <th>後置格<br><span class="lipa" data-term="postpositional"></span></th>
 	</tr>
 	<tr>
-	  <td>単数<br><span class="lipa">fanklavolo</span></td>
+	  <th>単数<br><span class="lipa" data-term="sg"></span></th>
 	  <td>
 	    <span class="bhat"></span><br>
 	    <span class="lit">ákíjam</span><br>
@@ -82,7 +150,7 @@
 	  </td>
 	</tr>
 	<tr>
-	  <td>複数<br><span class="lipa">lolervel</span></td>
+	  <th>複数<br><span class="lipa" data-term="pl"></span></th>
 	  <td>
 	    <span class="bhat"><span class="sf"></span></span><br>
 	    <span class="lit">ákíjamá</span><br>
@@ -118,18 +186,18 @@
       <br>
 
       <table>
-	<caption>子音語幹名詞 <span class="lipa">pervo ftlexest</span></caption>
+	<caption>子音語幹名詞 <span class="lipa" data-term="consonant-stem-noun"></span></caption>
 	<tr>
-	  <td></td>
-	  <td>主格<br><span class="lipa">lsans</span></td>
-	  <td>無格<br><span class="lipa">olorsans</span></td>
-	  <td>対格<br><span class="lipa">tsans</span></td>
-	  <td>属格<br><span class="lipa">diursans</span></td>
-	  <td>具格<br><span class="lipa">leusursans</span></td>
-	  <td>後置格<br><span class="lipa">emaltlese'd sans</span></td>
+	  <th></th>
+	  <th>主格<br><span class="lipa" data-term="nominative"></span></th>
+	  <th>無格<br><span class="lipa" data-term="zero"></span></th>
+	  <th>対格<br><span class="lipa" data-term="accusative"></span></th>
+	  <th>属格<br><span class="lipa" data-term="genitive"></span></th>
+	  <th>具格<br><span class="lipa" data-term="instrumental"></span></th>
+	  <th>後置格<br><span class="lipa" data-term="postpositional"></span></th>
 	</tr>
 	<tr>
-	  <td>単数<br><span class="lipa">fanklavolo</span></td>
+	  <th>単数<br><span class="lipa" data-term="sg"></span></th>
 	  <td>
 	    <span class="bhat"></span><br>
 	    <span class="lit">híja</span><br>
@@ -165,7 +233,7 @@
 	  </td>
 	</tr>
 	<tr>
-	  <td>複数<br><span class="lipa">lolervel</span></td>
+	  <th>複数<br><span class="lipa" data-term="pl"></span></th>
 	  <td>
 	    <span class="bhat"><span class="sf"></span></span><br>
 	    <span class="lit">híjazá</span><br>
@@ -204,21 +272,21 @@
     </div>
 
     <div>
-      <h3>人称代名詞 <span class="lipa">ftusurla</span></h3>
+      <h3>人称代名詞 <span class="lipa" data-term="personal-pronoun"></span></h3>
       <table>
 	<tr>
-	  <td>数 <span class="lipa"></span></td>
-	  <td>人称<br><span class="lipa">ftusurla</span></td>
-	  <td>主格<br><span class="lipa">lsans</span></td>
-	  <td>無格<br><span class="lipa">olorsans</span></td>
-	  <td>対格<br><span class="lipa">tsans</span></td>
-	  <td>属格<br><span class="lipa">diursans</span></td>
-	  <td>具格<br><span class="lipa">leusursans</span></td>
-	  <td>後置格<br><span class="lipa">emaltlese'd sans</span></td>
+	  <th>数 <span class="lipa" data-term="number"></span></th>
+	  <th>人称<br><span class="lipa" data-term="person"></span></th>
+	  <th>主格<br><span class="lipa" data-term="nominative"></span></th>
+	  <th>無格<br><span class="lipa" data-term="zero"></span></th>
+	  <th>対格<br><span class="lipa" data-term="accusative"></span></th>
+	  <th>属格<br><span class="lipa" data-term="genitive"></span></th>
+	  <th>具格<br><span class="lipa" data-term="instrumental"></span></th>
+	  <th>後置格<br><span class="lipa" data-term="postpositional"></span></th>
 	</tr>
 	<tr>
-	  <td rowspan="4">単数<br><span class="lipa">fanklavolo</span></td>
-	  <td>一人称<br><span class="lipa">mien ftusurla</span></td>
+	  <th rowspan="4">単数<br><span class="lipa" data-term="sg"></span></th>
+	  <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
 	  <td>
 	    <span class="bhat"></span><br>
 	    <span class="lit">ápa</span><br>
@@ -254,7 +322,7 @@
 	  </td>
 	</tr>
 	<tr>
-	  <td>二人称<br><span class="lipa">kna'd ftusurla</span></td>
+	  <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
 	  <td>
 	    <span class="bhat"></span><br>
 	    <span class="lit">áma</span><br>
@@ -290,7 +358,7 @@
 	  </td>
 	</tr>
 	<tr>
-	  <td>三人称男性<br><span class="lipa">sien ftusurla</span></td>
+	  <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">kí</span><br>
 	    <span class="ipa">[kiː]</span></td>
@@ -316,7 +384,7 @@
 	    <span class="ipa">[kiːɖɨ]</span></td>
 	</tr>
 	<tr>
-	  <td>三人称女性<br><span class="lipa">cien ftusurla</span></td>
+	  <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">ká</span><br>
 	    <span class="ipa">[kaː]</span></td>
@@ -343,8 +411,8 @@
 	</tr>
 
 	<tr>
-	  <td rowspan="5">複数<br><span class="lipa">lolervel</span></td>
-	  <td>一人称包括<br><span class="lipa"></span></td>
+	  <th rowspan="5">複数<br><span class="lipa" data-term="pl"></span></th>
+	  <th>一人称包括<br><span class="lipa" data-term="first-person-inclusive"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">bháma</span><br>
 	    <span class="ipa">[bʱaːma]</span></td>
@@ -370,7 +438,7 @@
 	    <span class="ipa">[bʱaːmaɖɨ]</span></td>
 	</tr>
 	<tr>
-	  <td>一人称除外<br><span class="lipa"></span></td>
+	  <th>一人称除外<br><span class="lipa" data-term="first-person-exclusive"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">bhá</span><br>
 	    <span class="ipa">[bʱaː]</span></td>
@@ -396,7 +464,7 @@
 	    <span class="ipa">[bʱaːɖɨ]</span></td>
 	</tr>
 	<tr>
-	  <td>二人称<br><span class="lipa">kna'd ftusurla</span></td>
+	  <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">mábha</span><br>
 	    <span class="ipa">[maːbʱa]</span></td>
@@ -422,7 +490,7 @@
 	    <span class="ipa">[maːbʱaɖɨ]</span></td>
 	</tr>
 	<tr>
-	  <td>三人称男性<br><span class="lipa">sien ftusurla</span></td>
+	  <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">kiṣlo</span><br>
 	    <span class="ipa">[kiʂɭɔː]</span></td>
@@ -448,7 +516,7 @@
 	    <span class="ipa">[kiʂɭɔːɖɨ]</span></td>
 	</tr>
 	<tr>
-	  <td>三人称女性<br><span class="lipa">cien ftusurla</span></td>
+	  <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
 	  <td><span class="bhat"></span><br>
 	    <span class="lit">kaṣlo</span><br>
 	    <span class="ipa">[kaʂɭɔː]</span></td>
@@ -478,45 +546,45 @@
     </div>
 
     <div>
-      <h3>動詞 <span class="lipa">ftona</span></h3>
+      <h3>動詞 <span class="lipa" data-term="verb"></span></h3>
       <span>
 	<table>
-	  <caption>母音語幹動詞 <span class="lipa">fende ftona</span></caption>
+	  <caption>母音語幹動詞 <span class="lipa" data-term="vowel-stem-verb"></span></caption>
 	  <tr>
-	    <td>命令形<br><span class="lipa">shrlovel</span></td>
-	    <td><span class="bhat"></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5"><span class="bhat"></span><br>
 	      <span class="lit">heyá</span><br>
 	      <span class="ipa">[xɛːɥaː]</span>
 	    </td>
 	  </tr>
 	  <tr>
-	    <td>不定詞<br><span class="lipa">ftlexisa'd ftlexestrisel</span></td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyáúḷ</span><br>
 	      <span class="ipa">[xɛːɥaːuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyáma</span><br>
 	      <span class="ipa">[xɛːɥaːma]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyághi</span><br>
 	      <span class="ipa">[xɛːɥaːgʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称<br><span class="lipa">mien ftusurla</span></td>
-	    <td>二人称<br><span class="lipa">kna'd ftusurla</span></td>
-	    <td>三人称女性<br><span class="lipa">cien ftusurla</span></td>
-	    <td>三人称男性<br><span class="lipa">sien ftusurla</span></td>
-	    <td>指示・固有<br><span class="lipa">nien ftusurla</span></td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞<br><span class="lipa">ftonajt</span></td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyádhí</span><br>
 	      <span class="ipa">[xɛːɥaːdʱiː]</span></td>
@@ -534,7 +602,7 @@
 	      <span class="ipa">[xɛːɥaːkaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞<br><span class="lipa">1te tiliesterlo</span></td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyádína</span><br>
 	      <span class="ipa">[xɛːɥaːdiːna]</span></td>
@@ -552,7 +620,7 @@
 	      <span class="ipa">[xɛːɥaːkaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞<br><span class="lipa">2te tiliesterlo</span></td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">heyádíha</span><br>
 	      <span class="ipa">[xɛːɥaːdiːxa]</span></td>
@@ -572,42 +640,42 @@
 	</table>
 	<br>
 	<table>
-	  <caption>子音語幹動詞</caption>
+	  <caption>子音語幹動詞 <span class="lipa" data-term="consonant-stem-verb"></span></caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td><span class="bhat"></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5"><span class="bhat"></span><br>
 	      <span class="lit">hem</span><br>
 	      <span class="ipa">[xɛːm]</span>
 	    </td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemúḷ</span><br>
 	      <span class="ipa">[xɛːmuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemama</span><br>
 	      <span class="ipa">[xɛːmama]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemaghi</span><br>
 	      <span class="ipa">[xɛːmagʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemadhí</span><br>
 	      <span class="ipa">[xɛːmadʱiː]</span></td>
@@ -625,7 +693,7 @@
 	      <span class="ipa">[xɛːmakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemadína</span><br>
 	      <span class="ipa">[xɛːmadiːna]</span></td>
@@ -643,7 +711,7 @@
 	      <span class="ipa">[xɛːmakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">hemadíha</span><br>
 	      <span class="ipa">[xɛːmadiːxa]</span></td>
@@ -665,48 +733,51 @@
       </span>
       <span>
 	<table>
-	  <caption>子音語幹動詞(二重子音型)</caption>
+	  <caption>子音語幹動詞(二重子音型) <span class="lipa" data-term="consonant-stem-verb"></span></caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td>
-	      <span class="bhat"></span><br>
-	      <span class="lit">acc</span><br>
-	      <span class="ipa">[asːə]</span>
-	    </td>
-	    <td colspan="2">
-	      <span class="bhat"></span>(非標準的)<br>
-	      <span class="lit">acca</span><br>
-	      <span class="ipa">[asːə]</span>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <div style="display: inline-block">
+		<span class="bhat"></span><br>
+		<span class="lit">acc</span><br>
+		<span class="ipa">[asːə]</span>
+	      </div>
+	      &nbsp;&nbsp;&nbsp;
+	      <div style="display: inline-block">
+		<span class="bhat"></span>(非標準的)<br>
+		<span class="lit">acca</span><br>
+		<span class="ipa">[asːə]</span>
+	      </div>
 	    </td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accúḷ</span><br>
 	      <span class="ipa">[asːúḷ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accama</span><br>
 	      <span class="ipa">[asːama]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accaghi</span><br>
 	      <span class="ipa">[asːagʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accadhí</span><br>
 	      <span class="ipa">[asːadʱiː]</span></td>
@@ -724,7 +795,7 @@
 	      <span class="ipa">[asːakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accadína</span><br>
 	      <span class="ipa">[asːadiːna]</span></td>
@@ -742,7 +813,7 @@
 	      <span class="ipa">[asːakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">accadíha</span><br>
 	      <span class="ipa">[asːadiːxa]</span></td>
@@ -762,41 +833,41 @@
 	</table>
 	<br>
 	<table>
-	  <caption>子音語幹動詞(-ah型)</caption>
+	  <caption>子音語幹動詞(-ah型) <span class="lipa" data-term="consonant-stem-verb"></span></caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td colspan="6"><span class="bhat"></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5"><span class="bhat"></span><br>
 	      <span class="lit">ṣikau</span><br>
 	      <span class="ipa">[ʂɨkau̯]</span></td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahúḷ</span><br>
 	      <span class="ipa">[ʂɨkaxuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahama</span><br>
 	      <span class="ipa">[ʂɨkaxama]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahaghi</span><br>
 	      <span class="ipa">[ʂɨkaxagʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahadhí</span><br>
 	      <span class="ipa">[ʂɨkaxadʱiː]</span></td>
@@ -814,7 +885,7 @@
 	      <span class="ipa">[ʂɨkaxakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahadína</span><br>
 	      <span class="ipa">[ʂɨkaxadiːna]</span></td>
@@ -832,7 +903,7 @@
 	      <span class="ipa">[ʂɨkaxakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">ṣikahadíha</span><br>
 	      <span class="ipa">[ʂɨkaxadiːxa]</span></td>
@@ -856,47 +927,49 @@
 	<table>
 	  <caption>j語幹動詞</caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td>
-	      <span class="bhat"></span><br>
-	      <span class="lit">cánaj</span><br>
-	      <span class="ipa">[saːnai̯]</span>
-	    </td>
-	    <td colspan="2">
-	      <span class="bhat"></span>(非標準的)<br>
-	      <span class="lit">cánai</span><br>
-	      <span class="ipa">[saːnai̯]</span>
-
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <div style="display: inline-block">
+		<span class="bhat"></span><br>
+		<span class="lit">cánaj</span><br>
+		<span class="ipa">[saːnai̯]</span>
+	      </div>
+	      &nbsp;&nbsp;&nbsp;
+	      <div style="display: inline-block">
+		<span class="bhat"></span>(非標準的)<br>
+		<span class="lit">cánai</span><br>
+		<span class="ipa">[saːnai̯]</span>
+	      </div>
 	    </td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajúḷ</span><br>
 	      <span class="ipa">[saːnajuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajama</span><br>
 	      <span class="ipa">[saːnajama]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5"><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajaghi</span><br>
 	      <span class="ipa">[saːnajagʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajadhí</span><br>
 	      <span class="ipa">[saːnajadʱiː]</span></td>
@@ -914,7 +987,7 @@
 	      <span class="ipa">[saːnajakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajadína</span><br>
 	      <span class="ipa">[saːnajadiːna]</span></td>
@@ -932,7 +1005,7 @@
 	      <span class="ipa">[saːnajakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cánajadíha</span><br>
 	      <span class="ipa">[saːnajadiːxa]</span></td>
@@ -952,41 +1025,45 @@
 	</table>
 	<br>
 	<table>
-	  <caption>j短動詞 aj型</caption>
+	  <caption>j短動詞(aj型)</caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajzem</span><br>
-	      <span class="ipa">[sai̯tʃɛːm]</span></td>
+	      <span class="ipa">[sai̯tʃɛm]</span></td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajúḷ</span><br>
 	      <span class="ipa">[sajuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajma</span><br>
 	      <span class="ipa">[sai̯ma]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajghi</span><br>
 	      <span class="ipa">[sai̯gʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajadhí</span><br>
 	      <span class="ipa">[sajadʱiː]</span></td>
@@ -1004,7 +1081,7 @@
 	      <span class="ipa">[sajakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajadína</span><br>
 	      <span class="ipa">[sajadiːna]</span></td>
@@ -1022,7 +1099,7 @@
 	      <span class="ipa">[sajakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">cajadíha</span><br>
 	      <span class="ipa">[sajadiːxa]</span></td>
@@ -1042,41 +1119,45 @@
 	</table>
 	<br>
 	<table>
-	  <caption>j短動詞 ij型</caption>
+	  <caption>j短動詞(ij型)</caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijzem</span><br>
 	      <span class="ipa">[riːtʃɛm]</span></td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijúḷ</span><br>
 	      <span class="ipa">[rijuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijma</span><br>
 	      <span class="ipa">[riːma]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijghi</span><br>
 	      <span class="ipa">[riːgʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijadhí</span><br>
 	      <span class="ipa">[rijadʱiː]</span></td>
@@ -1094,7 +1175,7 @@
 	      <span class="ipa">[rijakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijadína</span><br>
 	      <span class="ipa">[rijadiːna]</span></td>
@@ -1112,7 +1193,7 @@
 	      <span class="ipa">[rijakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">rijadíha</span><br>
 	      <span class="ipa">[rijadiːxa]</span></td>
@@ -1134,41 +1215,45 @@
       </span>
       <span>
 	<table>
-	  <caption>j短動詞 uj型</caption>
+	  <caption>j短動詞(uj型)</caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">súzem</span><br>
 	      <span class="ipa">[zuːtʃɛm]</span></td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">sujúḷ</span><br>
 	      <span class="ipa">[zujuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">súma</span><br>
 	      <span class="ipa">[zuːma]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">súghi</span><br>
 	      <span class="ipa">[zuːgʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">sujadhí</span><br>
 	      <span class="ipa">[zujadʱiː]</span></td>
@@ -1186,7 +1271,7 @@
 	      <span class="ipa">[zujakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">sujadína</span><br>
 	      <span class="ipa">[zujadiːna]</span></td>
@@ -1204,7 +1289,7 @@
 	      <span class="ipa">[zujakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">sujadíha</span><br>
 	      <span class="ipa">[zujadiːxa]</span></td>
@@ -1226,39 +1311,43 @@
 	<table>
 	  <caption>動詞zúḷ</caption>
 	  <tr>
-	    <td>命令形</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>命令形<br><span class="lipa" data-term="imperative"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zauzem</span><br>
 	      <span class="ipa">[tʃau̯tʃɛm]</span></td>
 	  </tr>
 	  <tr>
-	    <td>不定詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>不定詞<br><span class="lipa" data-term="infinitive"></span></th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zúḷ</span><br>
 	      <span class="ipa">[tʃuːɭ]</span></td>
 	  </tr>
 	  <tr>
-	    <td>非完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>非完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zauma</span><br>
 	      <span class="ipa">[tʃau̯ma]</span></td>
 	  </tr>
 	  <tr>
-	    <td>完了状況副詞</td>
-	    <td><span class="bhat"><span class="sf"></span></span><br>
+	    <th>完了状況副詞</th>
+	    <td colspan="5">
+	      <span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zaughi</span><br>
 	      <span class="ipa">[tʃau̯gʱi]</span></td>
 	  </tr>
 	  <tr>
-	    <td></td>
-	    <td>一人称</td>
-	    <td>二人称</td>
-	    <td>三人称女性</td>
-	    <td>三人称男性</td>
-	    <td>指示・固有</td>
+	    <th></th>
+	    <th>一人称<br><span class="lipa" data-term="first-person"></span></th>
+	    <th>二人称<br><span class="lipa" data-term="second-person"></span></th>
+	    <th>三人称女性<br><span class="lipa" data-term="third-person-feminine"></span></th>
+	    <th>三人称男性<br><span class="lipa" data-term="third-person-masculine"></span></th>
+	    <th>指示・固有<br><span class="lipa" data-term="third-person-neuter"></span></th>
 	  </tr>
 	  <tr>
-	    <td>終止詞</td>
+	    <th>終止詞<br><span class="lipa" data-term="realis"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zadhí</span><br>
 	      <span class="ipa">[tʃadʱiː]</span></td>
@@ -1276,7 +1365,7 @@
 	      <span class="ipa">[tʃakaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>過去分詞</td>
+	    <th>過去分詞<br><span class="lipa" data-term="past-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zadína</span><br>
 	      <span class="ipa">[tʃadiːna]</span></td>
@@ -1294,7 +1383,7 @@
 	      <span class="ipa">[tʃakaːtaː]</span></td>
 	  </tr>
 	  <tr>
-	    <td>未来分詞</td>
+	    <th>未来分詞<br><span class="lipa" data-term="future-participle"></span></th>
 	    <td><span class="bhat"><span class="sf"></span></span><br>
 	      <span class="lit">zadíha</span><br>
 	      <span class="ipa">[tʃadiːxa]</span></td>

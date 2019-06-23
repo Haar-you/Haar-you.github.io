@@ -2,6 +2,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Haarの倉庫</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fetch_ratings.js"></script>
+    
   </head>
   <body>
     <h1>Haarの倉庫</h1>
@@ -32,10 +36,12 @@
     <ul>
       <li>Twitter <a href="https://twitter.com/HaarLangLove">@HaarLangLove</a></li>
       <li>GitHub <a href="https://github.com/Haar-you">Haar-you</a></li>
-      <li>AtCoder <a href="https://atcoder.jp/users/you070707">you070707</a></li>
-      <li>Codeforces <a href="https://codeforces.com/profile/Haar">Haar</a></li>
+      <li>AtCoder <a href="https://atcoder.jp/users/you070707">you070707</a> (rating: <span id="atcoder-rating">????</span>)</li>
+      <li>Codeforces <a href="https://codeforces.com/profile/Haar">Haar</a> (rating: <span id="codeforces-rating">????</span>)</li>
     </ul>
 
-
+    <script>
+      fetch_ratings();
+    </script>
   </body>
 </html>

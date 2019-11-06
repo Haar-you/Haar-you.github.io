@@ -1,0 +1,50 @@
+
+
+.thai{
+    font-size: xx-large;
+    font-family: "Noto Serif Thai";
+}
+
+.ipa{
+    font-family: "Charis SIL";
+}
+
+.high{
+    background-color: #ff9999;
+}
+
+.mid{
+    background-color: #ffcc00;
+}
+
+.low{
+    background-color: #00ccff;
+}
+
+.rare{
+    color: #444;
+    background: repeating-linear-gradient(45deg, transparent , transparent 20%, lightgray 20%, lightgray 30%);
+}
+
+.archaic{
+    
+}
+
+.attention{
+    
+}
+
+.div-section{
+    margin: 10px;
+    border: 4px double black;
+    border-radius: 10px;
+}
+
+body{
+    
+}
+
+#main{
+    
+    
+}

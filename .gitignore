@@ -1,1 +1,6 @@
-*~
+_site
+.sass-cache
+.jekyll-metadata
+.vendor
+.bundle
+about.md

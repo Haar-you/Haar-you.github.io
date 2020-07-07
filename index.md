@@ -10,6 +10,7 @@ layout: default
 - 競技プログラミング
   - [解いた問題のソースコード等 (古い)](https://github.com/Haar-you/competitive_programming)
   - [C++でのライブラリ](https://haar-you.github.io/kyopro-lib/)
+  - [memo](./kyopro)
 
 - CTF
 

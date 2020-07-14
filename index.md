@@ -1,5 +1,5 @@
 ---
-layout: default
+    layout: default
 ---
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,6 +16,7 @@ layout: default
   - [memo](./kyopro)
 
 - CTF
+  - [writeups](./CTF-writeups)
 
 - Language
   - [タイ文字のメモ](https://haar-you.github.io/language/thai/thai_script/)

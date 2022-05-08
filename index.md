@@ -10,10 +10,10 @@
 [![haar](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fcodeforces%2Fjson%2Fhaar)](https://codeforces.com/profile/haar)
 
 - 競技プログラミング
-  - [解いた問題のソースコード等 (古い)](https://github.com/Haar-you/competitive_programming)
-  - [C++でのライブラリ](https://haar-you.github.io/kyopro-lib/)
-  - [Nimでのライブラリ](https://github.com/Haar-you/kyopro-lib-nim)
-  - [memo](./kyopro)
+  - [解いた問題のソースコード等 (Old)](https://github.com/Haar-you/competitive_programming)
+  - [C++でのライブラリ (Old)](https://haar-you.github.io/kyopro-lib/)
+  - [Nimでのライブラリ (Old)](https://github.com/Haar-you/kyopro-lib-nim)
+  - [Rustでのライブラリ](https://haar-you.github.io/kyopro-lib-rust/haar_kyopro_lib_rust/)
 
 - CTF
   - [writeups](./CTF-writeups)
@@ -24,13 +24,5 @@
 - Link
   - Twitter: [@HaarLangLove](https://twitter.com/HaarLangLove)
   - GitHub: [Haar-you](https://github.com/Haar-you)
-  - AtCoder: [you070707](https://atcoder.jp/users/you070707) (Rating: <span id="atcoder-rating">????</span>)
-  - Codeforces: [Haar](https://codeforces.com/profile/Haar) (Rating: <span id="codeforces-rating">????</span>)
-  
-  (Ratingの表示は[こちら](https://algon-320.hatenablog.com/entry/2019/04/06/011234)を使用しています。)
-
-
-
-<script>
-    fetch_ratings();
-</script>
+  - AtCoder: [you070707](https://atcoder.jp/users/you070707)
+  - Codeforces: [Haar](https://codeforces.com/profile/Haar)
